@@ -1,42 +1,33 @@
-// The prime factors of 13195 are 5, 7, 13 and 29.
-//
-// What is the largest prime factor of the number 600851475143 ?
-// use std::num;
-use std::f64;
+// By considering the terms in the Fibonacci sequence
+//  whose values do not exceed
+//  four million, find the sum of the even-valued terms.
+
 
 fn main(){
-    largest_prime_factor(600851475143 );
-}
+//    let mut i = 4000000;
+    let mut x_1  = 1;
+    let mut x_2  = 1;
+    let mut x_3 = 0;
+    let mut sum = 0;
 
-fn largest_prime_factor(x: i64){
-    let z = x as f64;
-    let z = z.sqrt();
-    let mut upper_limit = z as i64;
-    upper_limit = upper_limit + 1;
-    let mut factor = 0;
-    for y in 1..upper_limit{
-        if x % y == 0{
-            println!("Factor {}", y);
-            if is_prime(y)==true{
-            factor = y;}
+//    println!("Fib series 1 {}", 1);
+
+    loop{
+        x_3 = x_2 + x_1;
+        x_1 = x_2;
+        x_2 = x_3;
+
+//        println!("Fib series {} ", x_2);
+        if x_3 % 2 == 0 {
+//            println!("It's even! {}", x_3);
+        sum = sum + x_3;
+        }
+        if x_3 > 4000000{
+            break;
         }
 
+
     }
-    println!("Largest prime factor {}", factor);
+    println!("here's your sum {} ", sum);
 
-}
-
-fn is_prime(x: i64)->bool{
-    let z = x as f64;
-    let z = z.sqrt();
-    let mut abs_upper = z as i64;
-    abs_upper = abs_upper + 1;
-    println!("Upper limit {}",abs_upper);
-
-    for y in 2..abs_upper{
-        if x %y ==0{
-            return false;
-        }
-    }
-    return true;
 }

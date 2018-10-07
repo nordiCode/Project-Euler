@@ -1,10 +1,12 @@
 fn main() {
    
    for i in 1..101{
-       println!("{}",i);
-       if div_3(i) && div_5(i){println!("Fizzbizz");}
-       else if div_3(i){println!("Fizz");}
-       else if div_5(i){println!("Bizz");}
+      let mut answer =
+       if div_3(i) && div_5(i){"FizzBizz"}
+       else if div_3(i){"Fizz"}
+       else if div_5(i){"Bizz"}
+       else {""};
+       println!("{} {}",i,answer);
        
    }
 }

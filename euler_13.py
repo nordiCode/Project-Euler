@@ -103,21 +103,6 @@ big_num = """37107287533902102798797998220837590246510135740250
 big_num = ''.join(big_num.split())
 big_num= list(big_num)
 
-# i = 0
-# total_sum=0
-# num=''
-# sum =''
-# while i <= 4950:
-#     for r in range(0,50):
-#         sum += big_num[r+i]
-#         #print(r)
-#     print(sum)
-#     total_sum+=int(sum)
-#     sum = ''
-#     i+=1
-#
-# print(total_sum)
-
 i = 0
 total_sum =0
 while i < 100:
